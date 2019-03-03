@@ -1,0 +1,17 @@
+{
+    "issues": [{
+        "id": 1,
+        "description": "This is description of the issue",
+        "severity": "minor",
+        "status": "open",
+        "createdDate": "",
+        "resolvedDate": ""
+    }, {
+        "id": 2,
+        "description": "This is asldk;lsdk of the issue",
+        "severity": "major",
+        "status": "Closed",
+        "createdDate": "",
+        "resolvedDate": ""
+    }]
+}

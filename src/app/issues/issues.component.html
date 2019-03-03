@@ -1,0 +1,26 @@
+<div class="container">
+  <h2> List of Issues </h2>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th> ID </th>
+        <th> Description </th>
+        <th> Severity </th>
+        <th> Status </th>
+        <th> Created Date </th>
+        <th> Resolve Date </th>
+      </tr>
+      <tr *ngFor="let issue of issues">
+        <td>{{issue.id}}</td>
+        <td>{{issue.description}}</td>
+        <td>{{issue.severity}}</td>
+        <td>{{issue.status}}</td>
+        <td>{{issue.createdDate}}</td>
+        <td>{{issue.resolvedDate}}</td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>
