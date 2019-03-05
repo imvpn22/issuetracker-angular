@@ -18,7 +18,7 @@ export class IssueService {
   constructor( private http: HttpClient ) { }
 
   private log(message: string) {
-    console.log(`HeroService: ${message}`);
+    console.log(`IssueService: ${message}`);
   }
 
   /*
@@ -45,6 +45,23 @@ export class IssueService {
       tap(_ => this.log('fetched issues')),
       catchError(this.handleError('getIssues', []))
       );
+  }
+
+  /* GET Issue by id. Will 404 if id not found */
+  getIssue(id: number): Observable<Issue> {
+    const url = `${API_URL}/issues/${id}`;
+    return this.http.get<Issue>(url).pipe(
+      tap(_ => this.log(`fetched Issue id=${id}`)),
+      catchError(this.handleError<Issue>(`getIssue id=${id}`))
+    );
+  }
+
+  /* PUT: update the Issue Details on the server */
+  updateIssue(issue: Issue): Observable<any> {
+    return this.http.put(`${API_URL}/issues/${issue.id}`, issue, httpOptions).pipe(
+      tap(_ => this.log(`updated hero id=${issue.id}`)),
+      catchError(this.handleError<any>('updateIssue'))
+    );
   }
 
 

@@ -1,17 +1,20 @@
 {
-    "issues": [{
-        "id": 1,
-        "description": "This is description of the issue",
-        "severity": "minor",
-        "status": "open",
-        "createdDate": "",
-        "resolvedDate": ""
-    }, {
-        "id": 2,
-        "description": "This is asldk;lsdk of the issue",
-        "severity": "major",
-        "status": "Closed",
-        "createdDate": "",
-        "resolvedDate": ""
-    }]
+  "issues": [
+    {
+      "id": 1,
+      "description": "This is description of the issue",
+      "severity": "Major",
+      "createdDate": "",
+      "resolvedDate": "2019-03-14",
+      "status": "Open"
+    },
+    {
+      "id": 2,
+      "description": "This is asldk;lsdk of the issue",
+      "severity": "major",
+      "status": "Open",
+      "createdDate": "",
+      "resolvedDate": "2019-03-24"
+    }
+  ]
 }

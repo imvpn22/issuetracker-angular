@@ -21,7 +21,6 @@ export class IssuesComponent implements OnInit {
     this.issueService.getIssues()
       .subscribe(issues => {
         this.issues = issues;
-        console.log(issues);
       });
   }
 

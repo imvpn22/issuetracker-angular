@@ -6,11 +6,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IssuesComponent } from './issues/issues.component';
+import { IssueDetailComponent } from './issue-detail/issue-detail.component';
+import { IssueEditComponent } from './issue-edit/issue-edit.component';
+import { IssueAddComponent } from './issue-add/issue-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IssuesComponent
+    IssuesComponent,
+    IssueDetailComponent,
+    IssueEditComponent,
+    IssueAddComponent
   ],
   imports: [
     BrowserModule,
