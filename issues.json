@@ -11,7 +11,7 @@
     {
       "id": 2,
       "description": "This is asldk;lsdk of the issue",
-      "severity": "major",
+      "severity": "Minor",
       "status": "Open",
       "createdDate": "",
       "resolvedDate": "2019-03-24"

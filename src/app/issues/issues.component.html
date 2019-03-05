@@ -12,6 +12,7 @@
         <th> Resolve Date </th>
         <th> View </th>
         <th> Edit </th>
+        <th> Delete </th>
       </tr>
       <tr *ngFor="let issue of issues">
         <td>{{issue.id}}</td>
@@ -20,8 +21,9 @@
         <td>{{issue.status}}</td>
         <td>{{issue.createdDate}}</td>
         <td>{{issue.resolvedDate}}</td>
-        <td><a routerLink="/view/{{issue.id}}">View</a></td>
-        <td><a routerLink="/edit/{{issue.id}}">Edit</a> </td>
+        <td><a routerLink="/issue/{{issue.id}}/view">View</a></td>
+        <td><a routerLink="/issue/{{issue.id}}/edit">Edit</a></td>
+        <td> Delete </td>
       </tr>
     </table>
   </div>
