@@ -24,4 +24,9 @@ export class IssuesComponent implements OnInit {
       });
   }
 
+  delete(issue: Issue): void {
+    this.issues = this.issues.filter(i => i !== issue);
+    this.issueService.deleteIssue(issue).subscribe();
+  }
+
 }

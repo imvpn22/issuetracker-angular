@@ -64,5 +64,36 @@ export class IssueService {
     );
   }
 
+  /** POST: add a new hero to the server */
+  addIssue(issue: Issue): Observable<Issue> {
+    return this.http.post<Issue>(`${API_URL}/issues`, issue, httpOptions).pipe(
+      tap((newIssue: Issue) => this.log(`added Issue w/ id=${newIssue.id}`)),
+      catchError(this.handleError<Issue>('addIssue'))
+    );
+  }
+
+  /** DELETE: delete the hero from the server */
+  deleteIssue(issue: Issue | number): Observable<Issue> {
+    const id = typeof issue === 'number' ? issue : issue.id;
+    const url = `${API_URL}/issues/${id}`;
+
+    return this.http.delete<Issue>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted Issue id=${id}`)),
+      catchError(this.handleError<Issue>('deleteIssue'))
+    );
+  }
+
+  /* GET heroes whose name contains search term */
+  searchHeroes(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+      tap(_ => this.log(`found heroes matching "${term}"`)),
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
+    );
+  }
+
 
 }

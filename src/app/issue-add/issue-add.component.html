@@ -1,3 +1,38 @@
-<p>
-  issue-add works!
-</p>
+<div class="container">
+  <div class="issue-card form form-horizontal">
+    <div class="form-group center">
+      <h4>Add new Issue</h4>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="description"> Description </label>
+      <div class="col-sm-8">
+        <textarea class="form-control" id="description" [(ngModel)]="issue.description" placeholder="Description"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="severity"> Severity </label>
+      <div class="col-sm-8">
+        <select class="form-control" id="severity" [(ngModel)]="issue.severity">
+          <option *ngFor="let op of severityOptions" [ngValue]="op">{{op}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="status"> Status </label>
+      <div class="col-sm-8">
+        <select class="form-control" id="status" [(ngModel)]="issue.status">
+          <option *ngFor="let st of statusOptions" [ngValue]="st">{{st}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <span class="col-sm-4"><button class="btn btn-primary" (click)="add()">Add</button></span>
+      <span class="col-sm-offset-6 col-sm-8"><button class="btn btn-danger" (click)="goBack()">Go Back</button></span>
+    </div>
+
+  </div>
+</div>

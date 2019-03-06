@@ -21,11 +21,16 @@
         <td>{{issue.status}}</td>
         <td>{{issue.createdDate}}</td>
         <td>{{issue.resolvedDate}}</td>
-        <td><a routerLink="/issue/{{issue.id}}/view">View</a></td>
-        <td><a routerLink="/issue/{{issue.id}}/edit">Edit</a></td>
-        <td> Delete </td>
+        <td><a routerLink="/issue/{{issue.id}}/view">
+            <button class="btn btn-outline-info btn-sm">View</button>
+          </a></td>
+        <td><a routerLink="/issue/{{issue.id}}/edit">
+            <button class="btn btn-outline-primary btn-sm">Edit</button>
+          </a> </td>
+        <td><button class="btn btn-outline-danger btn-sm" (click)="delete(issue)"> Delete</button></td>
       </tr>
     </table>
+    <a routerLink="/issue/add"><button class="btn btn-primary">Add new Issue</button></a>
   </div>
 
 </div>
