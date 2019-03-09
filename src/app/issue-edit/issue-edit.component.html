@@ -21,6 +21,7 @@
       <label class="control-label col-sm-4" for="severity"> Severity </label>
       <div class="col-sm-8">
         <select class="form-control" id="severity" [(ngModel)]="issue.severity">
+          <option value="">Select</option>
           <option *ngFor="let op of severityOptions" [ngValue]="op" [selected]="op === issue.severity">{{op}}</option>
         </select>
       </div>
@@ -30,6 +31,7 @@
       <label class="control-label col-sm-4" for="status"> Status </label>
       <div class="col-sm-8">
         <select class="form-control" id="status" [(ngModel)]="issue.status">
+          <option value="">Select</option>
           <option *ngFor="let st of statusOptions" [ngValue]="st" [selected]="st === issue.status">{{st}}</option>
         </select>
       </div>
@@ -38,14 +40,14 @@
     <div class="form-group">
       <label class="control-label col-sm-4" for="createdDate">Created Date</label>
       <div class="col-sm-8">
-        <input class="form-control" id="createdDate" disabled [(ngModel)]="issue.createdDate" placeholder="Created Date" />
+        <input type="date" class="form-control" id="createdDate" [(ngModel)]="issue.createdDate" placeholder="Created Date" />
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4" for="resolvedDate">Resolved Date</label>
       <div class="col-sm-8">
-        <input class="form-control" id="resolvedDate" disabled [(ngModel)]="issue.resolvedDate" placeholder="Resolved Date" />
+        <input type="date" class="form-control" id="resolvedDate" [(ngModel)]="issue.resolvedDate" placeholder="Resolved Date" />
       </div>
     </div>
 

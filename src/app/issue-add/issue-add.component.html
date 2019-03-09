@@ -1,5 +1,5 @@
 <div class="container">
-<form class="issue-card form form-horizontal" name="issueForm" #fr="ngForm" (ngSubmit)="fr.form.valid && add()">
+  <form class="issue-card form form-horizontal" name="issueForm" #fr="ngForm" (ngSubmit)="fr.form.valid && add()">
     <div class="form-group center">
       <h4>Add new Issue</h4>
     </div>
@@ -7,26 +7,15 @@
     <div class="form-group">
       <label class="control-label col-sm-4" for="description"> Description </label>
       <div class="col-sm-8">
-        <textarea required
-          class="form-control"
-          id="description"
-          name="description"
-          [(ngModel)]="issue.description"
-          #description="ngModel"
-          placeholder="Describe the issue"
-          [ngClass]="{ 'is-invalid': fr.submitted && description.invalid }"></textarea>
+        <textarea required class="form-control" id="description" name="description" [(ngModel)]="issue.description"
+          #description="ngModel" placeholder="Describe the issue" [ngClass]="{ 'is-invalid': fr.submitted && description.invalid }"></textarea>
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-4" for="severity"> Severity </label>
       <div class="col-sm-8">
-        <select required
-          class="form-control"
-          id="severity"
-          name="severity"
-          [(ngModel)]="issue.severity"
-          #severity="ngModel"
+        <select required class="form-control" id="severity" name="severity" [(ngModel)]="issue.severity" #severity="ngModel"
           [ngClass]="{ 'is-invalid': fr.submitted && description.invalid }">
           <option value="">Select</option>
           <option *ngFor="let op of severityOptions" name="op" [ngValue]="op">{{op}}</option>
@@ -37,16 +26,26 @@
     <div class="form-group">
       <label class="control-label col-sm-4" for="status" name="status"> Status </label>
       <div class="col-sm-8">
-        <select required
-          class="form-control"
-          id="status"
-          name="status"
-          [(ngModel)]="issue.status"
-          #status="ngModel"
+        <select required class="form-control" id="status" name="status" [(ngModel)]="issue.status" #status="ngModel"
           [ngClass]="{ 'is-invalid': fr.submitted && description.invalid }">
           <option value="">Select</option>
           <option *ngFor="let st of statusOptions" name="st" [ngValue]="st">{{st}}</option>
         </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="createdDate">Created Date</label>
+      <div class="col-sm-8">
+        <input type="date" class="form-control" id="createdDate" name="createdDate" [(ngModel)]="issue.createdDate" #createdDate="ngModel" placeholder="Created Date" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="resolvedDate">Resolved Date</label>
+      <div class="col-sm-8">
+<input type="date" class="form-control" name="resolvedDate" id="resolvedDate" [(ngModel)]="issue.resolvedDate"
+  #resolvedDate="ngModel" placeholder="Resolved Date" />
       </div>
     </div>
 

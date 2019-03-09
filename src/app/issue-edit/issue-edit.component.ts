@@ -14,8 +14,8 @@ export class IssueEditComponent implements OnInit {
 
   @Input() issue: Issue;
 
-  statusOptions: string[] = ['Open', 'Closed'];
-  severityOptions: string[] = ['Major', 'Minor'];
+  statusOptions: string[] = ['Open', 'In Progress', 'Closed'];
+  severityOptions: string[] = ['Major', 'Minor', 'Critical'];
 
   constructor(
     private route: ActivatedRoute,

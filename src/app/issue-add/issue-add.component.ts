@@ -40,8 +40,8 @@ export class IssueAddComponent implements OnInit {
   }
 
   add(): void {
-    console.log(this.issue);
-    this.issue.createdDate = String(Date.now());
+    // console.log(this.issue);
+    this.issue.createdDate = this.issue.createdDate ? this.issue.createdDate :  String(Date.now());
 
     this.issueService.addIssue(this.issue)
       .subscribe(issue => {
@@ -50,7 +50,7 @@ export class IssueAddComponent implements OnInit {
 
     // Clear
     this.issueForm.resetForm();
-    // this.goBack();
+    this.goBack();
   }
 
 }

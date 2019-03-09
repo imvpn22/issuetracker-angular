@@ -1,5 +1,5 @@
 <div class="container">
-  <h2> List of Issues </h2>
+  <h4> List of Issues </h4>
   <div>
     <input #searchBox id="search-box"
       autofocus
@@ -32,8 +32,8 @@
         <td>{{issue.description}}</td>
         <td>{{issue.severity}}</td>
         <td>{{issue.status}}</td>
-        <td>{{issue.createdDate}}</td>
-        <td>{{issue.resolvedDate}}</td>
+        <td>{{issue.createdDate | date}}</td>
+        <td>{{issue.resolvedDate | date}}</td>
         <td><a routerLink="/issue/{{issue.id}}/view">
             <button class="btn btn-outline-info btn-sm">View</button>
           </a></td>
