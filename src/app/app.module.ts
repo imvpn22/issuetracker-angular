@@ -9,6 +9,7 @@ import { IssuesComponent } from './issues/issues.component';
 import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 import { IssueEditComponent } from './issue-edit/issue-edit.component';
 import { IssueAddComponent } from './issue-add/issue-add.component';
+import { IssueSearchComponent } from './issue-search/issue-search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { IssueAddComponent } from './issue-add/issue-add.component';
     IssuesComponent,
     IssueDetailComponent,
     IssueEditComponent,
-    IssueAddComponent
+    IssueAddComponent,
+    IssueSearchComponent
   ],
   imports: [
     BrowserModule,

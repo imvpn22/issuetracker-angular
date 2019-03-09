@@ -12,7 +12,7 @@ import { IssueService } from '../issue.service';
 })
 export class IssueAddComponent implements OnInit {
 
-  issue: Issue = {};
+  issue: Issue;
 
   statusOptions: string[] = ['Open', 'Closed'];
   severityOptions: string[] = ['Major', 'Minor'];

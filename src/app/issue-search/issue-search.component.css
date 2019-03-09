@@ -1,0 +1,44 @@
+/* Search private styles */
+#search-box {
+  width: 300px;
+  padding: 5px 13px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  border: 1px dashed #ccc;
+}
+
+#search-box:focus {
+  border: 1px solid #bbb;
+}
+
+.search-result li {
+  width: 300px;
+  padding: 3px 14px;
+  background-color: #eee;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.search-result li:hover {
+  background-color: #ddd;
+}
+
+.search-result li a {
+  color: #888;
+  display: block;
+  text-decoration: none;
+}
+
+.search-result li a:hover {
+  color: #333;
+}
+
+.search-result li a:active {
+  color: #333;
+}
+
+ul.search-result {
+  margin-top: 0;
+  padding-left: 0;
+}
