@@ -1,16 +1,8 @@
 {
   "issues": [
     {
-      "id": 7,
-      "description": "Some Issue\n",
-      "severity": "Major",
-      "status": "In Progress",
-      "createdDate": "2019-03-01",
-      "resolvedDate": ""
-    },
-    {
       "id": 8,
-      "description": "I have something",
+      "description": "I have something.\nBut I don't want to show.",
       "severity": "Minor",
       "status": "Closed",
       "createdDate": "2019-03-03",
@@ -39,6 +31,14 @@
       "status": "In Progress",
       "createdDate": "2019-02-03",
       "resolvedDate": ""
+    },
+    {
+      "id": 12,
+      "description": "Adding a new Issue to DEMO",
+      "severity": "Minor",
+      "status": "Closed",
+      "createdDate": "2019-02-05",
+      "resolvedDate": "2019-03-23"
     }
   ]
 }
