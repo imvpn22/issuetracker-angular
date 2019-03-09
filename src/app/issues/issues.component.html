@@ -1,6 +1,19 @@
 <div class="container">
-  <app-issue-search></app-issue-search>
   <h2> List of Issues </h2>
+  <div>
+    <input #searchBox id="search-box"
+      autofocus
+      (input)="search(searchBox.value)"
+      placeholder="Search for Issues" />
+
+    <ul class="search-result">
+      <li *ngFor="let issue of issues$ | async">
+        <a routerLink="/issue/{{issue.id}}/view">
+          {{issue.description}}
+        </a>
+      </li>
+    </ul>
+  </div>
   <div class="table-responsive table-condensed">
     <table class="table table-bordered table-hover">
       <tr>

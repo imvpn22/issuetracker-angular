@@ -2,3 +2,19 @@ td, th {
     padding: 5px;
     font-size: .9em;
 }
+
+/* Search private styles */
+#search-box {
+  width: 100%;
+  max-width: 500px;
+  padding: 5px 13px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  border: 1px dashed #ccc;
+}
+
+#search-box:focus {
+  border: 1px solid #bbb;
+}
+

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import {
+  debounceTime, distinctUntilChanged, switchMap
+} from 'rxjs/operators';
 
 import { Issue } from '../issue';
 import { IssueService } from '../issue.service';
@@ -10,6 +14,8 @@ import { IssueService } from '../issue.service';
 })
 export class IssuesComponent implements OnInit {
   issues: Issue[] = [];
+  issues$: Observable<Issue[]>;
+  private searchTerms = new Subject<string>();
 
   constructor( private issueService: IssueService ) { }
 
@@ -27,6 +33,16 @@ export class IssuesComponent implements OnInit {
   delete(issue: Issue): void {
     this.issues = this.issues.filter(i => i !== issue);
     this.issueService.deleteIssue(issue).subscribe();
+  }
+
+  search(term: string): void {
+    if (term && term.length > 1) {
+      this.searchTerms.next(term);
+      this.issueService.searchIssues(term)
+        .subscribe(issues => this.issues = issues);
+    } else {
+      this.getIssues();
+    }
   }
 
 }
