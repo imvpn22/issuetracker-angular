@@ -20,3 +20,7 @@
 .form-group div {
   width: 70%;
 }
+
+.is-invalid {
+  border-left: 5px solid #a94442;
+}
