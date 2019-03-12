@@ -7,8 +7,7 @@ import { IssueEditComponent } from './issue-edit/issue-edit.component';
 import { IssueAddComponent } from './issue-add/issue-add.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/issues', pathMatch: 'full' },
-  { path: 'issues', component: IssuesComponent},
+  { path: '', component: IssuesComponent},
   { path: 'issue/:id/view', component: IssueDetailComponent },
   { path: 'issue/:id/edit', component: IssueEditComponent },
   { path: 'issue/add', component: IssueAddComponent }

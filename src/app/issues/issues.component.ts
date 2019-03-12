@@ -17,7 +17,7 @@ export class IssuesComponent implements OnInit {
   issues$: Observable<Issue[]>;
   private searchTerms = new Subject<string>();
 
-  showFilters: any = true;
+  showFilters: any = false;
   colFilters: any = {
     description: true,
     severity: true,
@@ -59,3 +59,4 @@ export class IssuesComponent implements OnInit {
   }
 
 }
+
