@@ -17,6 +17,15 @@ export class IssuesComponent implements OnInit {
   issues$: Observable<Issue[]>;
   private searchTerms = new Subject<string>();
 
+  showFilters: any = true;
+  colFilters: any = {
+    description: true,
+    severity: true,
+    status: true,
+    createdDate: true,
+    resolvedDate: true
+  };
+
   constructor( private issueService: IssueService ) { }
 
   ngOnInit() {
@@ -43,6 +52,10 @@ export class IssuesComponent implements OnInit {
     } else {
       this.getIssues();
     }
+  }
+
+  showHideFilters(): void {
+    this.showFilters = !this.showFilters;
   }
 
 }

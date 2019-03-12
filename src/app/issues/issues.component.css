@@ -1,20 +1,63 @@
-td, th {
-    /* padding: 5px; */
-    font-size: .9em;
+td,
+th {
+  /* padding: 5px; */
+  font-size: .9em;
 }
 
 /* Search private styles */
-#search-box {
+.search-box {
+  margin: 1em 0;
+}
+
+.search-box input {
   width: 100%;
   max-width: 500px;
   padding: 5px 13px;
-  border-radius: 5px;
+  border-radius: 3px;
   outline: none;
   border: none;
   border: 1px dashed #ccc;
 }
 
-#search-box:focus {
+.search-box input:focus {
   border: 1px solid #bbb;
 }
 
+/* Style for Column filter */
+.col-filter {}
+
+.col-filter button {
+  margin: .5em;
+  transition: all .4s ease-in-out;
+}
+.filters {
+  transition: all 1s ease-in-out;
+}
+.filters label {
+  margin: .5em;
+  padding: 6px 14px;
+  background-color: #ddd;
+  border-radius: 3px;
+  color: #444;
+  cursor: pointer;
+  font-family: monospace;
+  text-transform: uppercase;
+  font-size: .9em;
+  border: 1px dashed rgba(0,0,0,0);
+  transition: all .3s ease-in-out;
+}
+.filters label:hover {
+  border-color: #369aab !important;
+}
+.active-filter {
+  background-color: #3eb9ce !important;
+  color: #fff !important;
+}
+.active-filter:hover {
+  background-color: #369aab !important;
+}
+.filters label input {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}

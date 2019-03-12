@@ -1,39 +1,50 @@
 <div class="container">
   <h4> List of Issues </h4>
-  <div>
-    <input #searchBox id="search-box"
-      autofocus
-      (input)="search(searchBox.value)"
-      placeholder="Search for Issues" />
-
-    <ul class="search-result">
-      <li *ngFor="let issue of issues$ | async">
-        <a routerLink="/issue/{{issue.id}}/view">
-          {{issue.description}}
-        </a>
-      </li>
-    </ul>
-  </div>
   <div class="table-responsive table-condensed">
+    <div class="search-box">
+      <input #searchBox autofocus id="search-box" (input)="search(searchBox.value)" placeholder="Search for Issues" />
+    </div>
+
+    <div class="col-filter">
+      <button [ngClass]="{'btn-success': showFilters}"  (click)=" showHideFilters()">Column Filters</button>
+      <span *ngIf="showFilters" class="filters">
+        <label [ngClass]="{'active-filter': colFilters.description}"> Description
+          <input type="checkbox" [(ngModel)]="colFilters.description">
+        </label>
+        <label [ngClass]="{'active-filter': colFilters.severity}"> Severity
+          <input type="checkbox" [(ngModel)]="colFilters.severity">
+        </label>
+        <label [ngClass]="{'active-filter': colFilters.status}"> Status
+          <input type="checkbox" [(ngModel)]="colFilters.status">
+        </label>
+        <label [ngClass]="{'active-filter': colFilters.createdDate}"> Created Date
+          <input type="checkbox" [(ngModel)]="colFilters.createdDate">
+        </label>
+        <label [ngClass]="{'active-filter': colFilters.resolvedDate}"> Resolved Date
+          <input type="checkbox" [(ngModel)]="colFilters.resolvedDate">
+        </label>
+      </span>
+    </div>
+
     <table class="table table-bordered table-hover">
       <tr>
         <th> ID </th>
-        <th> Description </th>
-        <th> Severity </th>
-        <th> Status </th>
-        <th> Created Date </th>
-        <th> Resolve Date </th>
+        <th *ngIf="colFilters.description"> Description </th>
+        <th *ngIf="colFilters.severity"> Severity </th>
+        <th *ngIf="colFilters.status"> Status </th>
+        <th *ngIf="colFilters.createdDate"> Created Date </th>
+        <th *ngIf="colFilters.resolvedDate"> Resolved Date </th>
         <th> View </th>
         <th> Edit </th>
         <th> Delete </th>
       </tr>
       <tr *ngFor="let issue of issues">
         <td>{{issue.id}}</td>
-        <td>{{issue.description}}</td>
-        <td>{{issue.severity}}</td>
-        <td>{{issue.status}}</td>
-        <td>{{issue.createdDate | date}}</td>
-        <td>{{issue.resolvedDate | date}}</td>
+        <td *ngIf="colFilters.description">{{issue.description}}</td>
+        <td *ngIf="colFilters.severity">{{issue.severity}}</td>
+        <td *ngIf="colFilters.status">{{issue.status}}</td>
+        <td *ngIf="colFilters.createdDate">{{issue.createdDate | date}}</td>
+        <td *ngIf="colFilters.resolvedDate">{{issue.resolvedDate | date}}</td>
         <td><a routerLink="/issue/{{issue.id}}/view">
             <button class="btn btn-outline-info btn-sm">View</button>
           </a></td>

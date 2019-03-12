@@ -57,6 +57,10 @@ td {
   border-spacing: 0;
 }
 
+table {
+  margin: 1em 0;
+}
+
 th,
 td {
   padding: .5em 1em;
@@ -135,4 +139,3 @@ td a button {
 .form-group div {
   width: 70%;
 }
-

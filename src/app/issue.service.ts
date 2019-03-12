@@ -59,12 +59,12 @@ export class IssueService {
   /* PUT: update the Issue Details on the server */
   updateIssue(issue: Issue): Observable<any> {
     return this.http.put(`${API_URL}/issues/${issue.id}`, issue, httpOptions).pipe(
-      tap(_ => this.log(`updated hero id=${issue.id}`)),
+      tap(_ => this.log(`updated issue id=${issue.id}`)),
       catchError(this.handleError<any>('updateIssue'))
     );
   }
 
-  /** POST: add a new hero to the server */
+  /** POST: add a new issue to the server */
   addIssue(issue: Issue): Observable<Issue> {
     return this.http.post<Issue>(`${API_URL}/issues`, issue, httpOptions).pipe(
       tap((newIssue: Issue) => this.log(`added Issue w/ id=${newIssue.id}`)),
@@ -72,7 +72,7 @@ export class IssueService {
     );
   }
 
-  /** DELETE: delete the hero from the server */
+  /** DELETE: delete the issue from the server */
   deleteIssue(issue: Issue | number): Observable<Issue> {
     const id = typeof issue === 'number' ? issue : issue.id;
     const url = `${API_URL}/issues/${id}`;
@@ -83,14 +83,14 @@ export class IssueService {
     );
   }
 
-  /* GET issues whose name contains search term */
+  /* GET issues whose description contains search term */
   searchIssues(term: string): Observable<Issue[]> {
     if (!term.trim()) {
-      // if not search term, return empty hero array.
+      // if not search term, return empty issue array.
       return of([]);
     }
     return this.http.get<Issue[]>(`${API_URL}/issues?q=${term}`).pipe(
-      tap(_ => this.log(`found heroes matching "${term}"`)),
+      tap(_ => this.log(`found issuees matching "${term}"`)),
       catchError(this.handleError<Issue[]>('searchIssues', []))
     );
   }
