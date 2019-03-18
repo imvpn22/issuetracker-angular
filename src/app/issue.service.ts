@@ -48,7 +48,7 @@ export class IssueService {
   }
 
   /* GET Issue by id. Will 404 if id not found */
-  getIssue(id: number): Observable<Issue> {
+  getIssue(id: any): Observable<Issue> {
     const url = `${API_URL}/issues/${id}`;
     return this.http.get<Issue>(url).pipe(
       tap(_ => this.log(`fetched Issue id=${id}`)),
@@ -73,8 +73,8 @@ export class IssueService {
   }
 
   /** DELETE: delete the issue from the server */
-  deleteIssue(issue: Issue | number): Observable<Issue> {
-    const id = typeof issue === 'number' ? issue : issue.id;
+  deleteIssue(issue: Issue): Observable<Issue> {
+    const id = issue.id;
     const url = `${API_URL}/issues/${id}`;
 
     return this.http.delete<Issue>(url, httpOptions).pipe(

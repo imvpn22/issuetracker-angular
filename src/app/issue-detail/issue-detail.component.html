@@ -3,10 +3,6 @@
     <div class="form-group center">
       <h4>View Issue Details</h4>
     </div>
-    <div class="form-group">
-      <span class="col-sm-4"> Id </span>
-      <span class="col-sm-8">{{issue.id}}</span>
-    </div>
 
     <div class="form-group">
       <span class="col-sm-4"> Description </span>
@@ -25,12 +21,12 @@
 
     <div class="form-group">
       <span class="col-sm-4"> Created Date </span>
-      <span class="col-sm-8">{{issue.createdDate ? issue.createdDate : '-'}}</span>
+      <span class="col-sm-8">{{issue.createdDate | date}}</span>
     </div>
 
     <div class="form-group">
       <span class="col-sm-4"> Resolved Date </span>
-      <span class="col-sm-8">{{issue.resolvedDate ? issue.resolvedDate : '-'}}</span>
+      <span class="col-sm-8">{{issue.resolvedDate | date}}</span>
     </div>
 
     <div class="form-group">

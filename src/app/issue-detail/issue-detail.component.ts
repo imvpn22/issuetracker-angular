@@ -25,7 +25,7 @@ export class IssueDetailComponent implements OnInit {
   }
 
   getIssue(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.issueService.getIssue(id)
     .subscribe(issue => this.issue = issue);
   }
